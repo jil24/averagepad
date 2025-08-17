@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1000, user-scalable=no, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/pad.css">
+    <link rel="manifest" href="manifest.json">
+
+    <title>Average Pad</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <div class="row h-100">
+            <div class="col-8 text-monospace bg-light border d-flex align-items-center">
+              <span>
+                <span id="output" class="display-3">Enter Scores...</span><br>
+              N=<span id="N"></span>
+              </span>
+            </div>
+            <div class="col text-monospace bg-light border overflow-hidden">
+              <div class="overflow-hidden d-flex align-items-end">
+				<div id="ticker" class="p-2">...</div>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div id="numpad_mac" class="col-4 h-100">
+          <div class="row">
+            <div class="col one-u"><button id="numlock_clear_mac" type="button" class="btn btn-primary btn-fill btn-operator">clear</button><span class="btn-desc"></span></div>
+            <div class="col one-u"><button id="equals_mac"  type="button" class="btn btn-primary btn-fill btn-operator">=</button><span class="btn-desc"></span></div>
+            <div class="col one-u"><button id="divide_mac"  type="button" class="btn btn-primary btn-fill btn-operator">/</button><span class="btn-desc">25%</span></div>
+            <div class="col one-u"><button id="multiply_mac"  type="button" class="btn btn-primary btn-fill btn-operator">*</button><span class="btn-desc">75%</span></div>
+          </div>
+          <div class="row">
+            <div class="col one-u"><button id="seven_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">7</button><span class="btn-desc">70%</span></div>
+            <div class="col one-u"><button id="eight_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">8</button><span class="btn-desc">80%</span></div>
+            <div class="col one-u"><button id="nine_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">9</button><span class="btn-desc">90%</span></div>
+            <div class="col one-u"><button id="minus_mac"  type="button" class="btn btn-primary btn-fill btn-operator">-</button><span class="btn-desc">undo/reset</span></div>
+          </div>
+          <div class="row">
+            <div class="col one-u"><button id="four_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">4</button><span class="btn-desc">40%</span></div>
+            <div class="col one-u"><button id="five_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">5</button><span class="btn-desc">50%</span></div>
+            <div class="col one-u"><button id="six_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">6</button><span class="btn-desc">60%</span></div>
+            <div class="col one-u"><button id="plus_mac"  type="button" class="btn btn-primary btn-fill btn-operator">+</button><span class="btn-desc">100%</span></div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col one-u"><button id="one_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">1</button><span class="btn-desc">10%</span></div>
+                <div class="col one-u"><button id="two_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">2</button><span class="btn-desc">20%</span></div>
+                <div class="col one-u"><button id="three_mac"  type="button" class="btn btn-primary btn-fill btn-numeric">3</button><span class="btn-desc">30%</span></div>
+              </div>
+              <div class="row">
+                <div class="col-8 two-u-horizontal"><button  id="zero_mac" type="button" class="btn btn-primary btn-fill btn-numeric">0</button><span class="btn-desc">0%</span></div>
+                <div class="col one-u"><button  id="point_mac" type="button" class="btn btn-primary btn-fill btn-numeric">.</button><span class="btn-desc">5%</span></div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="row">
+                <div class="col-12 two-u-vertical">
+                  <button id="enter_mac" type="button" class="btn btn-primary btn-fill btn-operator">enter</button><span class="btn-desc">manual entry</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="numpad_pc" class="col-4 h-100 numpad-active">
+          <div class="row">
+            <div class="col one-u"><button id="numlock_clear_pc" type="button" class="btn btn-primary btn-fill btn-operator">num lock</button><span class="btn-desc"></span></div>
+            <div class="col one-u"><button id="divide_pc"  type="button" class="btn btn-primary btn-fill btn-operator">/</button><span class="btn-desc">25%</span></div>
+            <div class="col one-u"><button id="multiply_pc"  type="button" class="btn btn-primary btn-fill btn-operator">*</button><span class="btn-desc">75%</span></div>
+            <div class="col one-u"><button id="minus_pc"  type="button" class="btn btn-primary btn-fill btn-operator">-</button><span class="btn-desc">undo/reset</span></div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col one-u"><button id="seven_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">7</button><span class="btn-desc">70%</span></div>
+                <div class="col one-u"><button id="eight_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">8</button><span class="btn-desc">80%</span></div>
+                <div class="col one-u"><button id="nine_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">9</button><span class="btn-desc">90%</span></div>
+              </div>
+              <div class="row">
+              <div class="col one-u"><button id="four_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">4</button><span class="btn-desc">40%</span></div>
+              <div class="col one-u"><button id="five_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">5</button><span class="btn-desc">50%</span></div>
+              <div class="col one-u"><button id="six_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">6</button><span class="btn-desc">60%</span></div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="row">
+                <div class="col-12 two-u-vertical">
+                  <button id="plus_pc"  type="button" class="btn btn-primary btn-fill btn-operator">+</button><span class="btn-desc">100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col one-u"><button id="one_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">1</button><span class="btn-desc">10%</span></div>
+                <div class="col one-u"><button id="two_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">2</button><span class="btn-desc">20%</span></div>
+                <div class="col one-u"><button id="three_pc"  type="button" class="btn btn-primary btn-fill btn-numeric">3</button><span class="btn-desc">30%</span></div>
+              </div>
+              <div class="row">
+                <div class="col-8 two-u-horizontal"><button  id="zero_pc" type="button" class="btn btn-primary btn-fill btn-numeric">0</button><span class="btn-desc">0%</span></div>
+                <div class="col one-u"><button  id="point_pc" type="button" class="btn btn-primary btn-fill btn-numeric">.</button><span class="btn-desc">5%</span></div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="row">
+                <div class="col-12 two-u-vertical">
+                  <button id="enter_pc" type="button" class="btn btn-primary btn-fill btn-operator">enter</button><span class="btn-desc">manual entry</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div>Keyboard Layout: PC&nbsp</div>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="layout_switch">
+          <label class="custom-control-label" for="layout_switch">Mac</label>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal" role="dialog" id="manual_entry">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Manual Entry</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-inline">
+              <input id="manual_entry_input" type="number" class="form-control col-6 mx-3">
+              <button id="manual_submit"  type="button" class="btn btn-primary">&check;</button>
+              <button id="manual_abort"  type="button" class="btn btn-danger">&#10005;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-371.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/averagepad.js"></script>
+    
+  </body>
+</html>

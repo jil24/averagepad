@@ -1,0 +1,61 @@
+.one-u {
+  aspect-ratio:1;
+  padding: 0.2em 0.2em 0.2em 0.2em;
+  overflow: hidden;
+
+}
+
+.two-u-vertical {
+  aspect-ratio:0.5;
+  padding: 0.2em 0.2em 0.2em 0.2em;
+  overflow: hidden;
+}
+
+.two-u-horizontal {
+  aspect-ratio:2;
+  padding: 0.2em 0.2em 0.2em 0.2em;
+  overflow: hidden;
+}
+
+.btn-fill {
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+.btn-numeric {
+  color: #000;
+  background-color: #ddd;
+  border-color: #999;
+}
+
+.btn-operator {
+  color: #000;
+  background-color: #999;
+  border-color: #666;
+}
+
+.btn-desc {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size:0.75em;
+  text-align:center;
+}
+
+.btn-hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+html,body{
+    -webkit-overflow-scrolling : touch !important;
+    overflow: auto !important;
+}
+
+/*.ticker {
+  position: absolute; top: 0; bottom: 0;
+}*/
+/*div {outline: 1px solid red}*/
